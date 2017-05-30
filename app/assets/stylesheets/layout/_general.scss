@@ -1,0 +1,14 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.body-wrapper {
+  min-height: 100%;
+  position: relative;
+
+  .content {
+    padding-bottom: 7em;
+  }
+}
