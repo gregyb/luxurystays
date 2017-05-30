@@ -1,2 +1,21 @@
-<h1>Villas#show</h1>
-<p>Find me in app/views/villas/show.html.erb</p>
+<h1>Visit Our Great Villa in <%=@villa.city  %></h1>
+
+<h2><%= @villa.title %></h2>
+
+<h3> <%= @villa.description %></h3>
+
+<h4> <%= @villa.price %> per night</h4>
+
+<%= link_to "Back to our Villas", villas_path %>
+
+<%= link_to "Edit Details of your Villa", edit_villa_path(@villa) %>
+
+
+<%= link_to "Delete Your Villa from Listing", villa_path(@villa),
+      method: :delete,
+      data: { confirm: "Are you sure?" } %>
+
+
+
+
+

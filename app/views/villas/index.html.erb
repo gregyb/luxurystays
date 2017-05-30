@@ -1,2 +1,23 @@
 <h1>Villas#index</h1>
 <p>Find me in app/views/villas/index.html.erb</p>
+
+<h1>Our Luxury Villas for your LUXURYSTAYS</h1>
+
+
+********************************************
+<% @villas.each do |villa| %>
+
+<h2><%= villa.city %></h2>
+<h3><%= villa.title %></h3>
+<h3><%= villa.description %></h3>
+<h3> <%= villa.price %> € per night</h3>
+
+<%= link_to villa.title, villa_path(villa) %>
+<%= link_to "Add your Luxury Villa to listing",new_villa_path %>
+
+
+<% end %>
+
+********************************************
+
+
