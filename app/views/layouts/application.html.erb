@@ -9,12 +9,22 @@
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
   </head>
+
   <body>
-    <%= render 'shares/navbar' %>
-    <%= yield %>
+    <div class="body-wrapper">
+      <%= render 'shared/navbar' %>
+
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+
+      <div class="content">
+        <%= yield %>
+      </div>
+     <%= render 'shared/footer'  %>
+
+    </div>
+
     <%= javascript_include_tag 'application' %>
   </body>
 </html>
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
 
