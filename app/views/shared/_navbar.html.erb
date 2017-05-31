@@ -26,11 +26,17 @@
       <%= link_to edit_user_registration_path do %>
         <i class=“fa fa-user”></i>
       <% end %>
-      <%= link_to "Sign Out", destroy_user_session_path , method: :delete, class: "navbar-wagon-item navbar-wagon-link" %>
-      <div class="badge-container">
-      <%= image_tag "Greg.jpg", class: "avatar" %>
-      <div class="badge badge-red">12</div>
+    <!-- dropdow link-->
+       <div class="badge-container" >
+      <div class="dropdown">
+        <img src="http://www.androidpolice.com/wp-content/uploads/2014/06/nexusae0_Google-Photos-icon-logo.png" class="avatar dropdown-toggle" id="navbar-wagon-menu avatar-big" data-toggle="dropdown">
+        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+          <li><a href="#">Profile</a></li>
+          <li><a href="#">Dashboard</a></li>
+          <li><%= link_to "Log Out", destroy_user_session_path , method: :delete, class: "navbar-wagon-item navbar-wagon-link" %></li>
+        </ul>
       </div>
+    </div>
 
     <% else %>
 
@@ -40,10 +46,7 @@
     <% end %>
     <!-- Notification link-->
 
-    <!-- Profile picture and dropdown -->
 
-    <!-- Button (call-to-action) -->
-  </div>
 
   <!-- Dropdown appearing on mobile only -->
   <div class="navbar-wagon-item hidden-md hidden-lg">
@@ -65,4 +68,5 @@
       </ul>
     </div>
   </div>
+</div>
 </div>
