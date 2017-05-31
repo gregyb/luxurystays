@@ -6,14 +6,16 @@
 
 <h4> <%= @villa.price %> per night</h4>
 
-<%= link_to "Back to our Villas", villas_path %>
+<%= link_to "Back", villas_path %>
 
-<%= link_to "Edit Details of your Villa", edit_villa_path(@villa) %>
+<%= link_to "Edit", edit_villa_path(@villa) %>
 
 
 <%= link_to "Delete Your Villa from Listing", villa_path(@villa),
       method: :delete,
       data: { confirm: "Are you sure?" } %>
+
+<%= link_to "Request to Book", villa_booking_path(@villa) %>
 
 
 
