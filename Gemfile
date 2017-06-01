@@ -17,6 +17,8 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'autoprefixer-rails'
 gem 'omniauth-facebook'
+gem 'cloudinary'
+gem 'carrierwave', '~> 0.11.2'
 
 
 

@@ -37,6 +37,6 @@ class VillasController < ApplicationController
  private
 
  def villa_params
-  params.require(:villa).permit(:title, :price, :city, :description)
+  params.require(:villa).permit(:title, :price, :city, :description, :picture, :picture_cache)
  end
 end

@@ -4,6 +4,7 @@ class Villa < ApplicationRecord
   validates :description, presence: true
   validates :city, presence: true
   validates :price, presence: true
+  mount_uploader :picture, PhotoUploader
 
 
 end
