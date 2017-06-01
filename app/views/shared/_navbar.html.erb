@@ -30,7 +30,9 @@
     <!-- dropdow link-->
        <div class="badge-container" >
       <div class="dropdown">
-        <img src="http://www.androidpolice.com/wp-content/uploads/2014/06/nexusae0_Google-Photos-icon-logo.png" class="avatar dropdown-toggle" id="navbar-wagon-menu avatar-big" data-toggle="dropdown">
+        <!-- <img src= "current_user.facebook_picture_url" class="avatar dropdown-toggle" id="navbar-wagon-menu avatar-big" data-toggle="dropdown"> -->
+        <%= image_tag current_user.facebook_picture_url, class: "avatar dropdown-toggle",
+              id: "navbar-wagon-menu avatar-big", data: { toggle: "dropdown" } %>
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
           <li><a href="#">Profile</a></li>
           <li><a href="#">Dashboard</a></li>

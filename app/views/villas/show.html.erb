@@ -6,6 +6,8 @@
 
 <h4> <%= @villa.price %> per night</h4>
 
+<%= cl_image_tag @product.photo, height: 300, width: 400, crop: :fill %>
+
 <%= link_to "Back", villas_path %>
 
 <%= link_to "Edit", edit_villa_path(@villa) %>

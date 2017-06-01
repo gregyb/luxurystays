@@ -1,5 +1,9 @@
-<h1>Villas#new</h1>
-<p>Find me in app/views/villas/new.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4 col-sm-offset-4">
+
+<h1>Add your Villa to our Listing </h1>
+<!-- <p>Find me in app/views/villas/new.html.erb</p> -->
 
 <%= simple_form_for @villa do |f| %>
 
@@ -7,8 +11,16 @@
   <%= f.input :price, :hint => "Prices should be in bitcoin" %>
   <%= f.input :city %>
   <%= f.input :description, :hint => "Long description for your villa: bedroom, bathroom..." %>
-  <%= f.button :submit %>
+  <%= f.input :picture %>
+  <%= f.input :picture_cache, as: :hidden %>
+  <div class = "text-center">
+  <%= f.button :submit ,class: "btn btn-primary" %>
+  </div>
 
   <!-- Add picture module for villa -->
 
   <% end %>
+
+     </div>
+  </div>
+</div>
