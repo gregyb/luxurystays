@@ -26,6 +26,7 @@ class VillasController < ApplicationController
  def update
   @villa = Villa.find(params[:id])
   @villa.update(villa_params)
+  redirect_to villa_path(@villa)
  end
 
  def destroy
