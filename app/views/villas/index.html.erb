@@ -1,23 +1,41 @@
-<h1>Villas#index</h1>
-<p>Find me in app/views/villas/index.html.erb</p>
-
+<div class="index-villa">
 <h1>Our Luxury Villas for your LUXURYSTAYS</h1>
 
+<div class="container">
+<div class="text-center">
 
-********************************************
+<div class="cardvilla" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('images/cardvilla-background.jpeg');">
+  <div class="cardvilla-category">Popular</div>
+  <div class="cardvilla-description">
+    <h2>Some stuff</h2>
+    <p>Very cool stuff, useful and smart</p>
+  </div>
+  <div class="cardvilla-user">
+    <img src="images/papillard.jpeg" class="avatar">
+  </div>
+  <a href="#" class="cardvilla-link"></a>
+</div>
+
 <% @villas.each do |villa| %>
 
-<h2><%= villa.city %></h2>
-<h3><%= villa.title %></h3>
-<h3><%= villa.description %></h3>
-<h3> <%= villa.price %> € per night</h3>
+<div class="cardvilla" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= villa.picture %>);">
+  <div class="cardvilla-category"><%= villa.price %>, <%= villa.city %></div>
+  <div class="cardvilla-description">
+    <h2><%= villa.title %></h2>
+    <p><%= villa.description %></p>
+  </div>
+  <div class="cardvilla-user">
+    <img src="images/papillard.jpeg" class="avatar">
+  </div>
+  <%= link_to "Add your Luxury Villa to listing",new_villa_path, class: "cardvilla-link" %>
+  <%= link_to "Book This Villa", villa_path(villa), class: "cardvilla-link" %>
 
-<%= link_to villa.title, villa_path(villa) %>
-<%= link_to "Add your Luxury Villa to listing",new_villa_path %>
 
+</div>
 
 <% end %>
-
-********************************************
+    </div>
+  </div>
+</div>
 
 
