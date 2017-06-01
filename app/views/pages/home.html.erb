@@ -1,32 +1,44 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12">
-    <div class='card_1'>
-      <h1>Luxurystays</h1>
-      <h2>Book unique Villa in an amazing frame.</h2>
+      <div class='card'>
+        <h1>Luxurystays</h1>
+        <h2>Book unique Villa in an amazing frame.</h2>
       </div>
     </div>
   </div>
 </div>
+
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-4">
-      <!-- insert <div class="card"> -->
-      <div class="card" >
-      <%= image_tag "house.jpg" %>
+      <div class="card">
+        <%= image_tag "house.jpg" %>
       </div>
     </div>
-
-    <div class="col-xs-12 col-sm-4">
-    <div class="card"  >
-      <%= image_tag "house.jpg" %>
-      </div>
-      <!-- insert <div class="card"> -->
-    </div>
-    <div class="col-xs-12 col-sm-4">
-      <!-- insert <div class="card"> -->
-    <div class="card" >
-      <%= image_tag "house.jpg" %>
-    </div>
+    <div class="col-xs-12 col-sm-4"><div class="card"><%= image_tag "house.jpg" %></div></div>
+    <div class="col-xs-12 col-sm-4"><div class="card"><%= image_tag "house.jpg" %></div></div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-4"><div class="card"><%= image_tag "Venise.jpg" %></div></div>
+    <div class="col-xs-12 col-sm-4"><div class="card"><%= image_tag "Venise.jpg" %></div></div>
+    <div class="col-xs-12 col-sm-4"><div class="card"><%= image_tag "Venise.jpg" %></div></div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-3"><div class="card card-type-special"><%= image_tag "London.jpg" %></div></div>
+    <div class="col-xs-12 col-sm-3"><div class="card card-type-special"><%= image_tag "Shanghai.jpg" %></div></div>
+    <div class="col-xs-12 col-sm-3"><div class="card card-type-special"><%= image_tag "Tokyo.jpg" %></div></div>
+    <div class="col-xs-12 col-sm-3"><div class="card card-type-special"><%= image_tag "Paris.jpg" %></div></div>
   </div>
 </div>
+
+<% @villas.each_slice(3) do |villas| %>
+  <div class="row">
+    <% villas.each do |villa| %>
+      <div class="col-md-4"><%= villa.title %></div>
+    <% end %>
+  </div>
+<% end %>
+
+
+

@@ -35,20 +35,33 @@
 }
 
 .card img {
+  margin:20px 0;
   width:100%;
 }
 
-.card_1 h1 {
+.card-type-special img {
+  margin:20px 0px;
+  height:319px;
+  width:213px;
+}
+
+.card h1 {
   font-size: 65px;
   font-weight: bold;
   text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
-  font-color: #4c9ce0;
+  color: black;
 }
 
-.card_1 h2 {
+.card h2 {
   font-size: 50px;
   font-weight: lighter;
   text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
   font-color: black;
   padding-bottom:10px;
+}
+.card p{
+  font-family: montserrat;
+  color:black;
+  font-weight: normal;
+  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
 }
