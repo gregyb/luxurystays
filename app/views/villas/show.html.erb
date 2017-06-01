@@ -1,3 +1,4 @@
+
 <div class="banner" style="background-image">
   <%= cl_image_tag @villa.picture %>
   <div class="banner-content">
@@ -7,23 +8,34 @@
 
 <h1>Rent this amazing Villa in <%=@villa.city  %></h1>
 
-<h2><%= @villa.title %></h2>
+<h1><%= @villa.title %></h1>
 
-<h3> <%= @villa.description %></h3>
+<h2> <%= @villa.description %></h2>
 
-<h4> <%= @villa.price %> per night</h4>
+<h3> <%= @villa.price %> per night</h3>
+
+<div class="text-center">
+<%= cl_image_tag @villa.picture, height: 300, width: 400, crop: :fill %>
+</div>
 
 
-<%= link_to "Back", villas_path %>
+<%= link_to "Back", villas_path, class: "btn btn-primary"%>
 
-<%= link_to "Edit", edit_villa_path(@villa) %>
+<%= link_to "Edit", edit_villa_path(@villa), class: "btn btn-info" %>
 
 
 <%= link_to "Delete Your Villa from Listing", villa_path(@villa),
       method: :delete,
-      data: { confirm: "Are you sure?" } %>
+      data: { confirm: "Are you sure?" }, class: "btn btn-danger"  %>
 
-<%= link_to "Request to Book", villa_booking_path(@villa) %>
+<%= link_to "Request to Book", villa_booking_path(@villa), class: "btn btn-success" %>
+</div>
+
+
+
+
+</div>
+
 
 <div class="container">
     <div class='col-md-5'>
