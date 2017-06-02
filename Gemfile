@@ -19,6 +19,8 @@ gem 'autoprefixer-rails'
 gem 'omniauth-facebook'
 gem 'cloudinary'
 gem 'carrierwave', '~> 0.11.2'
+gem 'momentjs-rails', '>= 2.9.0'
+gem 'bootstrap3-datetimepicker-rails', '~> 4.14.30'
 
 
 
