@@ -1,27 +1,27 @@
 <div class="container">
-<div class="text-center">
+  <div class="text-center">
 
-<h1><%= @villa.title %></h1>
+    <h1><%= @villa.title %></h1>
 
-<h2> <%= @villa.description %></h2>
+    <h2> <%= @villa.description %></h2>
 
-<h3> <%= @villa.price %> per night</h3>
+    <h3> <%= @villa.price %> per night</h3>
 
-<div class="text-center">
-<%= cl_image_tag @villa.picture, height: 300, width: 400, crop: :fill %>
-</div>
+    <div class="text-center">
+      <%= cl_image_tag @villa.picture, height: 300, width: 400, crop: :fill %>
+    </div>
 
-<%= link_to "Back", villas_path, class: "btn btn-primary"%>
+    <%= link_to "Back", villas_path, class: "btn btn-primary"%>
 
-<%= link_to "Edit", edit_villa_path(@villa), class: "btn btn-info" %>
+    <%= link_to "Edit", edit_villa_path(@villa), class: "btn btn-info" %>
 
 
-<%= link_to "Delete Your Villa from Listing", villa_path(@villa),
-      method: :delete,
-      data: { confirm: "Are you sure?" }, class: "btn btn-danger"  %>
+    <%= link_to "Delete Your Villa from Listing", villa_path(@villa),
+    method: :delete,
+    data: { confirm: "Are you sure?" }, class: "btn btn-danger"  %>
 
-<%= link_to "Request to Book", villa_booking_path(@villa), class: "btn btn-success" %>
-</div>
+    <%= link_to "Request to Book", villa_booking_path(@villa), class: "btn btn-success" %>
+  </div>
 
 
 
