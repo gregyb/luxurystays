@@ -9,8 +9,6 @@
 <h2> <%= @villa.description %></h2>
 
 
-    <h2> <%= @villa.description %></h2>
-
     <h3> <%= @villa.price %> per night</h3>
 
     <div class="text-center">
@@ -34,10 +32,24 @@
 
 
 </div>
-
-
-
 <div class="container">
+  <div class='col-md-5 text-center col-md-offset-3'>
+<%= simple_form_for [@villa, @booking] do |f| %>
+      <div class='input-group date' id='datetimepicker6'>
+
+<%= f.input :start_date, as: :string, id: 'datetimepicker6' %>
+    </div>
+
+      <div class='input-group date' id='datetimepicker7'>
+<%= f.input :end_date, as: :string, id: 'datetimepicker7' %>
+    </div>
+
+<%= f.button :submit,  class: "btn btn-success" %>
+<% end  %>
+    </div>
+    </div>
+
+<!-- <div class="container">π
   <div class='col-md-5'>
     <div class="form-group">
       <div class='input-group date' id='datetimepicker6'>
@@ -58,20 +70,17 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
 <% content_for(:after_js) do %>
 <%= javascript_tag do %>
-$(function () {
-$('#datetimepicker6').datetimepicker();
-$('#datetimepicker7').datetimepicker({
-useCurrent: false //Important! See issue #1075
+$(document).ready(function () {
+$('#booking_start_date').datetimepicker({
+  format:"YYYY-mm-DD"
 });
-$("#datetimepicker6").on("dp.change", function (e) {
-$('#datetimepicker7').data("DateTimePicker").minDate(e.date);
+$('#booking_end_date').datetimepicker({
+  format:"YYYY-mm-DD"
 });
-$("#datetimepicker7").on("dp.change", function (e) {
-$('#datetimepicker6').data("DateTimePicker").maxDate(e.date);
-});
+
 });
 <% end %>
 <% end %>
