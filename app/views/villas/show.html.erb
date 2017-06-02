@@ -1,3 +1,6 @@
+<div class="container">
+  <div class="text-center">
+
 
 <h1>Rent this amazing Villa in <%=@villa.city  %></h1>
 
@@ -5,21 +8,23 @@
 
 <h2> <%= @villa.description %></h2>
 
-<h3> <%= @villa.price %> per night</h3>
 
-<div class="text-center">
-<%= cl_image_tag @villa.picture, height: 300, width: 400, crop: :fill %>
-</div>
+    <h2> <%= @villa.description %></h2>
+
+    <h3> <%= @villa.price %> per night</h3>
+
+    <div class="text-center">
+      <%= cl_image_tag @villa.picture, height: 300, width: 400, crop: :fill %>
+    </div>
+
+    <%= link_to "Back", villas_path, class: "btn btn-primary"%>
+    <%= link_to "Edit", edit_villa_path(@villa), class: "btn btn-info" %>
 
 
-<%= link_to "Back", villas_path, class: "btn btn-primary"%>
+    <%= link_to "Delete Your Villa from Listing", villa_path(@villa),
+    method: :delete,
+    data: { confirm: "Are you sure?" }, class: "btn btn-danger"  %>
 
-<%= link_to "Edit", edit_villa_path(@villa), class: "btn btn-info" %>
-
-
-<%= link_to "Delete Your Villa from Listing", villa_path(@villa),
-      method: :delete,
-      data: { confirm: "Are you sure?" }, class: "btn btn-danger"  %>
 
 <%= link_to "Request to Book", new_villa_booking_path(@villa), class: "btn btn-success" %>
 </div>
@@ -27,5 +32,47 @@
 
 
 
+
 </div>
+
+
+
+<div class="container">
+  <div class='col-md-5'>
+    <div class="form-group">
+      <div class='input-group date' id='datetimepicker6'>
+        <input type='text' class="form-control" />
+        <span class="input-group-addon">
+          <span class="glyphicon glyphicon-calendar"></span>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class='col-md-5'>
+    <div class="form-group">
+      <div class='input-group date' id='datetimepicker7'>
+        <input type='text' class="form-control" />
+        <span class="input-group-addon">
+          <span class="glyphicon glyphicon-calendar"></span>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+<% content_for(:after_js) do %>
+<%= javascript_tag do %>
+$(function () {
+$('#datetimepicker6').datetimepicker();
+$('#datetimepicker7').datetimepicker({
+useCurrent: false //Important! See issue #1075
+});
+$("#datetimepicker6").on("dp.change", function (e) {
+$('#datetimepicker7').data("DateTimePicker").minDate(e.date);
+});
+$("#datetimepicker7").on("dp.change", function (e) {
+$('#datetimepicker6').data("DateTimePicker").maxDate(e.date);
+});
+});
+<% end %>
+<% end %>
 
