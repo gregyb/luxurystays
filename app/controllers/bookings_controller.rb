@@ -9,6 +9,7 @@ class BookingsController < ApplicationController
 
   def new
    @booking = Booking.new
+   @villa=Villa.find(params[:villa_id])
   end
 
    def create

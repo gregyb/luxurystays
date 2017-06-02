@@ -1,11 +1,4 @@
 
-<div class="banner" style="background-image">
-  <%= cl_image_tag @villa.picture %>
-  <div class="banner-content">
-  </div>
-</div>
-
-
 <h1>Rent this amazing Villa in <%=@villa.city  %></h1>
 
 <h1><%= @villa.title %></h1>
@@ -36,42 +29,3 @@
 
 </div>
 
-
-<div class="container">
-    <div class='col-md-5'>
-        <div class="form-group">
-            <div class='input-group date' id='datetimepicker6'>
-                <input type='text' class="form-control" />
-                <span class="input-group-addon">
-                    <span class="glyphicon glyphicon-calendar"></span>
-                </span>
-            </div>
-        </div>
-    </div>
-    <div class='col-md-5'>
-        <div class="form-group">
-            <div class='input-group date' id='datetimepicker7'>
-                <input type='text' class="form-control" />
-                <span class="input-group-addon">
-                    <span class="glyphicon glyphicon-calendar"></span>
-                </span>
-            </div>
-        </div>
-    </div>
-</div>
-<% content_for(:after_js) do %>
-  <%= javascript_tag do %>
-    $(function () {
-        $('#datetimepicker6').datetimepicker();
-        $('#datetimepicker7').datetimepicker({
-            useCurrent: false //Important! See issue #1075
-        });
-        $("#datetimepicker6").on("dp.change", function (e) {
-            $('#datetimepicker7').data("DateTimePicker").minDate(e.date);
-        });
-        $("#datetimepicker7").on("dp.change", function (e) {
-            $('#datetimepicker6').data("DateTimePicker").maxDate(e.date);
-        });
-    });
-  <% end %>
-<% end %>
