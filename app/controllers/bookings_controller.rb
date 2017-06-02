@@ -9,12 +9,13 @@ class BookingsController < ApplicationController
 
   def new
    @booking = Booking.new
+   @villa=Villa.find(params[:villa_id])
   end
 
    def create
     @booking = Booking.new(booking_params)
     @booking.save
-    redirect_to booking_path(@booking)
+    redirect_to villa_bookings_path(@booking)
   end
 
   def edit
